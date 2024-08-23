@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# CCS app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Project Management Application for High-Volume Scanning Projects! This is a quality management system designed specifically for high-volume scanner teams. The application helps track box readiness indicators and team performance metrics, such as task completion speed, all through a modern, responsive dashboard.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Dashboard](#dashboard)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Box Readiness Tracking**: Monitor the readiness status of boxes in real-time.
+- **Performance Metrics**: Track key performance metrics, including task completion speed for team members.
+- **Interactive Dashboard**: Visualize performance data with charts and graphs for better decision-making.
+- **State Management**: Efficient state management using Redux Toolkit.
+- **Routing**: Navigate smoothly between different sections of the application with React Router.
+- **Iconography**: Enhance the user experience with a comprehensive set of icons from react-icons.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React, Redux Toolkit, TypeScript, Vite
+- **Routing**: React Router
+- **Icons**: React Icons
+- **State Management**: Redux Persist, Redux Toolkit
+- **Build Tool**: Vite
+- **Linting**: ESLint, TypeScript ESLint
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Clone the repository:
+    ```bash
+    git clone https://github.com/yburdakova/CCS.git
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+## Usage
+
+- **Dashboard**: View real-time data on box readiness and team performance metrics.
+- **Navigation**: Use the navigation menu to access different sections of the application.
+- **Metrics Visualization**: See visual representations of team performance, such as task completion speed.
+
+## Dashboard
+
+The dashboard provides an interactive interface where users can:
+
+- Monitor box readiness indicators.
+- Track team performance metrics.
+- View detailed visualizations through charts and graphs.
+
+## Author
+
+- **Author Name**: Yana Burdakova
+- **Email**: burdakovacom@gmail.com
+- **Portfolio**: [Yana Burdakova](https://burdakova.com)
+- **GitHub**: [Yana's GitHub Profile](https://github.com/yburdakova)
+- **LinkedIn**: [Yana's LinkedIn Profile](https://www.linkedin.com/in/yana-burdakova/)
