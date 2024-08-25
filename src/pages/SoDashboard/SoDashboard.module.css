@@ -1,0 +1,23 @@
+.workOnButton{
+  background-color: green;
+}
+
+.workOffButton{
+  background-color: red;
+}
+
+fieldset{
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  width:fit-content;
+}
+legend {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.boxSearch{
+  display: flex;
+  gap: 20px;
+}

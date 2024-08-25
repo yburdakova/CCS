@@ -2,7 +2,9 @@ import React from 'react'
 
 const PersonalTasks = () => {
   return (
-    <div>PersonalTasks</div>
+    <div className='outletBox'>
+      <div className="contentBlock">Personal Tasks</div>
+    </div>
   )
 }
 

@@ -2,7 +2,9 @@ import React from 'react'
 
 const ProductionSheet = () => {
   return (
-    <div>ProductionSheet</div>
+    <div className='outletBox'>
+      <div className="contentBlock">ProductionSheet</div>
+    </div>
   )
 }
 

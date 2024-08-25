@@ -16,21 +16,32 @@ import {
   TlDashboard
 } from './pages'
 import {
-  BrowserRouter,
   Navigate,
   Route,
   Routes,
   useLocation
 } from 'react-router-dom'
-import { RootState } from './data/types';
 import { useEffect, useRef } from 'react';
 import { loginFinish } from './redux/userRedux';
+import { RootState, AppDispatch } from './redux/store';
+import { loadBoxes, loadEventLogs, loadTasks, loadUsers } from './redux/apiCalls';
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const userType = useSelector((state: RootState) => state.user.userType);
+
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, [dispatch]);
   const location = useLocation();
   const prevLocation = useRef(location.pathname);
+
+  useEffect(() => {
+    dispatch(loadUsers());
+    dispatch(loadBoxes());
+    dispatch(loadTasks());
+    dispatch(loadEventLogs());
+  }, [dispatch]);
 
   useEffect(() => {
     if (location.pathname === '/' && prevLocation.current !== '/') {

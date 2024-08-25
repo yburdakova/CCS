@@ -1,0 +1,58 @@
+.link {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.itemContainer {
+  list-style: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease-in-out;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.active::after {
+  width: 100%; 
+  background-color: rgb(184, 178, 178);
+}
+
+.active {
+  color:rgb(184, 178, 178);;
+}
+
+@media (prefers-color-scheme: light) {
+  .link {
+    color: #213547;
+  }
+
+  .link::after {
+    background-color: #213547;
+  }
+
+  .active {
+    color: #4A7BD0;
+  }
+
+  .active::after {
+    background-color: #4A7BD0;
+  }
+}

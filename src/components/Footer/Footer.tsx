@@ -1,8 +1,10 @@
-import React from 'react'
+import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <div className={styles.copyright}>© 2024 - Courthouse Computer Systems</div>
+    </footer>
   )
 }
 

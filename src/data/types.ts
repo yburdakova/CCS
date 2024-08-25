@@ -6,57 +6,83 @@ export interface UserData {
   username: string;
   password: string;
   userkey: number;
+  isActive: boolean;
 }
 
 export interface BoxData {
   id: number,
-  box: string,
-  folderRange: string,
+  barcode: string,
+  folderRange: string | null,
   missingFolders: string [],
-  notes: string,
-  numberOfFolders: number,
-  numberOfPages: number,
-  preparator: UserData["name"];
-  scanner1: UserData["name"];
-  scanner2: UserData["name"];
-  reviewer: UserData["name"];
-  prepTime: number,
-  scan1Time: number,
-  scan2Time: number,
-  reviewTime: number,
+  notes: string | null,
+  numberOfFolders: number | null,
+  numberOfPages: number | null,
+  inspector: UserData["name"] | null,
+  preparator: UserData["name"] | null,
+  scanner1: UserData["name"] | null,
+  scanner2: UserData["name"] | null,
+  reviewer: UserData["name"] | null,
+  inspTime: number | null,
+  prepTime: number | null,
+  scan1Time: number | null,
+  scan2Time: number | null,
+  reviewTime: number | null,
   ready: boolean,
   converted: boolean,
   uploaded: boolean
 }
 
-export interface TaskData {
-  id: number,
-  title: TaskType,
-  level: number,
-  startTime: Date,
-  endTime: Date,
-  inprogress: boolean,
-}
-
-export type TaskType =
-  'Work' |
-  'Team meeting' |
-  'Training' |
-  'End of day Clean up' |
-  'Administrative Management' |
-  'Box Preparation' |
-  'Scanning 1' |
-  'Scanning 2' |
-  'Review' ;
-
   export interface UserState {
     currentUser: UserData | null;
     userType: UserData["role"] | null,
+    error: string | null;
+    isFetching: boolean;
+    isActive: boolean;
   }
 
   export interface RootState {
     user: UserState;
   }
+
+  export interface LoginCredentials {
+    username: string;
+    password: string;
+  }
+
+  export interface MenuItemProps{
+    title: string;
+    path: string;
+  }
+
+  export interface TaskData {
+    id: number;
+    taskType: "Box Activity" | "Management Activity";
+    activity: "Inspection" | "Preparation" | "Scanning 1" | "Scanning 2" | "Review" | "Team Meeting" | "Training" | "End of day Clean up" | "Administrative Management" | "Other";
+    boxId: number | null;
+    userId: number;
+    startTime: string;
+    endTime: string | null;
+    isPaused: boolean;
+  }
+
+  export interface EventLog {
+    id: number;
+    userId: number;
+    eventType: "Work Start" | "Work End" | "Task Start" | "Task End" | "Task Pause";
+    taskId: number | null;
+    timestamp: string;
+  }
+  export interface UsersState {
+    users: UserData[];
+    error: string | null;
+    isFetching: boolean;
+  }
+
+  export interface EventLogsState {
+    eventLogs: EventLog[]
+  }
+
+  //============================================================= OLD
 
 export interface CategoryData {
   _id?: string;
@@ -197,11 +223,7 @@ export interface ProductItemProps {
   focused?: boolean;
   reloadProducts?: () => void 
 }
-export interface MenuItemProps{
-  title: string;
-  path: string;
-  icon: React.ReactNode;
-}
+
 
 export interface TableRowProps {
   rowData: ProductData

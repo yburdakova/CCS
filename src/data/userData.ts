@@ -1,13 +1,14 @@
 import { UserData } from "./types";
 
-export const users: UserData[]= [
+export const users: UserData[] = [
   {
     id: 1,
     name: "Yana Burdakova",
     role: "tl",
     username: "yanab",
     password:"yanab",
-    userkey: 555
+    userkey: 555,
+    isActive: false
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const users: UserData[]= [
     role: "tl",
     username: "cjr",
     password: "cjr",
-    userkey: 111
+    userkey: 111,
+    isActive: false
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ export const users: UserData[]= [
     role: "so",
     username: "oliviap",
     password: "oliviap",
-    userkey: 222
+    userkey: 222,
+    isActive: false
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ export const users: UserData[]= [
     role: "so",
     username: "jacobf",
     password: "jacobf",
-    userkey: 333
+    userkey: 333,
+    isActive: false
   },
   {
     id: 5,
@@ -39,7 +43,8 @@ export const users: UserData[]= [
     role: "pm",
     username: "chrisk",
     password: "chrisk",
-    userkey: 444
+    userkey: 444,
+    isActive: false
   },
   {
     id: 6,
@@ -47,6 +52,52 @@ export const users: UserData[]= [
     role: "so",
     username: "joshuah",
     password: "joshuah",
-    userkey: 555
+    userkey: 666,
+    isActive: false
+  },
+  {
+    id: 7,
+    name: "Maha Amjad",
+    role: "so",
+    username: "mahaa",
+    password: "mahaa",
+    userkey: 777,
+    isActive: false
+  },
+  {
+    id: 8,
+    name: "Lauren McNeill",
+    role: "so",
+    username: "laurenm",
+    password: "laurenm",
+    userkey: 888,
+    isActive: false
+  },
+  {
+    id: 9,
+    name: "Brandon Purvis",
+    role: "so",
+    username: "brandonp",
+    password: "brandonp",
+    userkey: 999,
+    isActive: false
+  },
+  {
+    id: 10,
+    name: "Anastasia Goncharova",
+    role: "so",
+    username: "anastasiag",
+    password: "anastasiag",
+    userkey: 1111,
+    isActive: false
+  },
+  {
+    id: 11,
+    name: "Carter Scott",
+    role: "so",
+    username: "carters",
+    password: "carters",
+    userkey: 2222,
+    isActive: false
   }
 ];

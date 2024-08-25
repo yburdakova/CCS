@@ -1,53 +1,63 @@
-
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-import { users } from '../../data/userData';
-import { loginSuccess, userAccess } from '../../redux/userRedux';
-
+import { CustomInput } from '../../components';
+import { useDispatch, useSelector } from 'react-redux';
+import styles from './Login.module.css';
+import { useEffect, useState } from 'react';
+import { AppDispatch, RootState } from '../../redux/store';
+import { login } from '../../redux/apiCalls';
+import { resetError } from '../../redux/userRedux';
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user.currentUser);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const { isFetching, error, userType } = useSelector((state: RootState) => state.user);
 
-  const handleLogin = (role: string) => {
-    let currentUser;
-
-    switch (role) {
-      case 'pm':
-        currentUser = users.find(user => user.name === 'Chris Koester');
-        break;
-      case 'tl':
-        currentUser = users.find(user => user.name === 'Yana Burdakova');
-        break;
-      case 'so':
-        currentUser = users.find(user => user.name === 'Olivia Parker');
-        break;
-      default:
-        currentUser = null;
-    }
-
-    if (currentUser) {
-      dispatch(loginSuccess(currentUser));
-      dispatch(userAccess(currentUser.role));
-
-      if (role === 'pm') {
+  useEffect(() => {
+    if (user) {
+      if (userType === 'pm') {
         navigate('/manager');
-      } else if (role === 'tl') {
+      } else if (userType === 'tl') {
         navigate('/teamlead');
-      } else if (role === 'so') {
+      } else if (userType === 'so') {
         navigate('/scanoperator');
       }
     }
+  }, [user, userType, navigate]);
+
+  useEffect(() => {
+    dispatch(resetError());
+  }, [dispatch, username, password]);
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    dispatch(login({ username, password }));
   };
 
   return (
-    <div>
-      <h2>Choose the role</h2>
-      <div className="button_container">
-        <button onClick={() => handleLogin('pm')}>Project Manager</button>
-        <button onClick={() => handleLogin('tl')}>Team Lead</button>
-        <button onClick={() => handleLogin('so')}>Scanner Operator</button>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <h1>
+          Boxy
+        </h1>
+        <div className={styles.loginBox}>
+          <div className={styles.p}>Project Management Application <br></br>for High-Volume Scanning Projects</div>
+          <div className={styles.p}>Enter your registration data</div>
+          <form onSubmit={handleSubmit}>
+            <CustomInput type="text" label="Username" placeholder="Username" required getValue={setUsername}/>
+            <CustomInput type="password" label="Password" placeholder="Password" required getValue={setPassword}/>
+
+            <button className={styles.button} type="submit" disabled={isFetching}>
+              Log In
+            </button>
+            {error && (
+              <div className={`${styles.error} ${styles.active}`}>{error}</div>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );

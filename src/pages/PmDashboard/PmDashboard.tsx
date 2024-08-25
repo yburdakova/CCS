@@ -1,8 +1,13 @@
 import React from 'react'
+import { RootState } from '../../data/types';
+import { useSelector } from 'react-redux';
 
 const PmDashboard = () => {
+
   return (
-    <div>PM Dashboard</div>
+    <div className='outletBox'>
+      <div className="contentBlock">Project Manager Dashboard</div>
+    </div>
   )
 }
 
