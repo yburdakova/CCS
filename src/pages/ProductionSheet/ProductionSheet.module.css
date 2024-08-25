@@ -1,0 +1,23 @@
+.taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.taskItem {
+  display: flex;
+gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.taskName {
+  font-weight: bold;
+}
+
+.taskTime span {
+  display: block;
+  margin: 5px 0;
+}

@@ -1,16 +1,26 @@
 .workOnButton{
   background-color: green;
+  min-width: 220px;
 }
-
+.workStatusLabel{
+  font-size: 24px;
+}
 .workOffButton{
   background-color: red;
+  min-width: 220px;
 }
-
+.workStatusBox{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 fieldset{
   border-radius: 10px;
   display: flex;
   gap: 20px;
   width:fit-content;
+  align-items: center;
+  padding: 20px 20px;
 }
 legend {
   padding: 10px;
@@ -21,3 +31,23 @@ legend {
   display: flex;
   gap: 20px;
 }
+
+.fetchButton{
+  height: 45px;
+  align-self: flex-end;
+  padding: 0 40px;
+}
+
+.boxActivity{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxStage{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 10px;
+}
+

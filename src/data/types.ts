@@ -65,6 +65,8 @@ export interface BoxData {
     isPaused: boolean;
   }
 
+  export type ActivityType = TaskData['activity'];
+
   export interface EventLog {
     id: number;
     userId: number;

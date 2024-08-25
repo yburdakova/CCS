@@ -32,6 +32,7 @@ body, html {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 form{
@@ -63,7 +64,10 @@ button {
   min-width: 64px;
 }
 
-
+button:disabled{
+  background-color: gray;
+  cursor: not-allowed;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
