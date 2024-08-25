@@ -3,10 +3,12 @@ import { BoxData } from "../data/types";
 
 interface BoxesState {
   boxes: BoxData[];
+  barcodes: string[];
 }
 
 const initialState: BoxesState = {
   boxes: [],
+  barcodes: []
 };
 
 const boxesSlice = createSlice({
@@ -15,6 +17,7 @@ const boxesSlice = createSlice({
   reducers: {
     setBoxes: (state, action: PayloadAction<BoxData[]>) => {
       state.boxes = action.payload;
+      state.barcodes = action.payload.map(box => box.barcode);
     },
     updateBox: (state, action: PayloadAction<BoxData>) => {
       const index = state.boxes.findIndex(box => box.id === action.payload.id);
@@ -22,6 +25,7 @@ const boxesSlice = createSlice({
         state.boxes[index] = action.payload;
       }
     },
+
   },
 });
 

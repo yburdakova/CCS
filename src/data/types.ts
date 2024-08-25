@@ -8,6 +8,14 @@ export interface UserData {
   userkey: number;
   isActive: boolean;
 }
+export interface BoxTaskTypes {
+  operator: number | null;
+  inProgress: boolean;
+  isFinished: boolean;
+  startTime: string | null;
+  endTime: string | null;
+  durationMin: number;
+}
 
 export interface BoxData {
   id: number,
@@ -17,16 +25,11 @@ export interface BoxData {
   notes: string | null,
   numberOfFolders: number | null,
   numberOfPages: number | null,
-  inspector: UserData["name"] | null,
-  preparator: UserData["name"] | null,
-  scanner1: UserData["name"] | null,
-  scanner2: UserData["name"] | null,
-  reviewer: UserData["name"] | null,
-  inspTime: number | null,
-  prepTime: number | null,
-  scan1Time: number | null,
-  scan2Time: number | null,
-  reviewTime: number | null,
+  inspection: BoxTaskTypes | null,
+  preparation: BoxTaskTypes | null,
+  scanning1: BoxTaskTypes | null,
+  scanning2: BoxTaskTypes | null,
+  review: BoxTaskTypes | null,
   ready: boolean,
   converted: boolean,
   uploaded: boolean
@@ -83,7 +86,16 @@ export interface BoxData {
   export interface EventLogsState {
     eventLogs: EventLog[]
   }
+export interface WorkEventsProps {
+  userId: number;
+  isActiveUser: boolean;
+}
 
+export interface BoxActivityProps {
+  barcodes: string[];
+  boxes: BoxData[];
+  users: UserData[];
+}
   //============================================================= OLD
 
 export interface CategoryData {

@@ -1,0 +1,56 @@
+.boxSearch{
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.fetchButton{
+  height: 45px;
+  align-self: flex-end;
+  padding: 0 40px;
+}
+
+.suggestionsList {
+  position: absolute;
+  z-index: 2;
+  background-color: rgb(226, 224, 224);
+  padding: 10px;
+  border-radius: 10px;
+  top: 50px;
+  list-style: none;
+  width: 63%;
+  color: black;
+  max-height: 150px;
+  overflow-y: auto;
+  min-height: 20px;
+}
+
+.suggestionItem {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestionItem:hover {
+  background-color: #d1d1d1;
+}
+
+.suggestionItem + .suggestionItem {
+  border-top: 1px solid #a9a9a9;
+}
+
+.boxActivity{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxStage{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 10px 10px;
+}
+.boxTaskButton{
+  min-width: 200px;
+}

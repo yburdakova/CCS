@@ -9,16 +9,46 @@ export const boxes: BoxData[] = [
     notes: "47328 Exhibit (video file)",
     numberOfFolders: 27,
     numberOfPages: 2673,
-    inspector: "CJ Rowland",
-    preparator: "CJ Rowland",
-    scanner1: "CJ Rowland",
-    scanner2: "Jacob Ferrebee",
-    reviewer: "Olivia Parker",
-    inspTime: 10,
-    prepTime: 310,
-    scan1Time: 235,
-    scan2Time: 195,
-    reviewTime: 115,
+    inspection: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T08:00:00 ",
+      endTime:  "2024-08-19T08:10:00 ",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T08:10:00 ",
+      endTime:  "2024-08-19T08:50:00 ",
+      durationMin: 40
+    },
+    scanning1: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T08:50:00 ",
+      endTime:  "2024-08-19T09:50:00 ",
+      durationMin: 60
+    },
+    scanning2: {
+      operator: 4,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T09:50:00 ",
+      endTime:  "2024-08-19T11:30:00 ",
+      durationMin: 100
+    },
+    review: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T11:30:00 ",
+      endTime:  "2024-08-19T11:55:00 ",
+      durationMin: 25
+    },
     ready: true,
     converted: true,
     uploaded: true
@@ -31,16 +61,46 @@ export const boxes: BoxData[] = [
     notes: "",
     numberOfFolders: 27,
     numberOfPages: 2291,
-    inspector: "Yana Burdakova",
-    preparator: "Yana Burdakova",
-    scanner1: "Yana Burdakova",
-    scanner2: "CJ Rowland",
-    reviewer: "Yana Burdakova",
-    inspTime: 10,
-    prepTime: 285,
-    scan1Time: 225,
-    scan2Time: 225,
-    reviewTime: 50,
+    inspection: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T09:00:00",
+      endTime: "2024-08-19T09:10:00",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T09:15:00",
+      endTime: "2024-08-19T14:00:00",
+      durationMin: 285
+    },
+    scanning1: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T14:15:00",
+      endTime: "2024-08-19T18:00:00",
+      durationMin: 225
+    },
+    scanning2: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-19T18:15:00",
+      endTime: "2024-08-19T22:00:00",
+      durationMin: 225
+    },
+    review: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-20T08:00:00",
+      endTime: "2024-08-20T08:50:00",
+      durationMin: 50
+    },
     ready: true,
     converted: true,
     uploaded: false
@@ -53,16 +113,46 @@ export const boxes: BoxData[] = [
     notes: "",
     numberOfFolders: 32,
     numberOfPages: 2874,
-    inspector: "Jacob Ferrebee",
-    preparator: "Jacob Ferrebee",
-    scanner1: "Jacob Ferrebee",
-    scanner2: "CJ Rowland",
-    reviewer: "Olivia Parker",
-    inspTime: 10,
-    prepTime: 255,
-    scan1Time: 310,
-    scan2Time: 245,
-    reviewTime: 110,
+    inspection: {
+      operator: 4,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-20T08:00:00",
+      endTime: "2024-08-20T08:10:00",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 4,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-20T08:15:00",
+      endTime: "2024-08-20T12:30:00",
+      durationMin: 255
+    },
+    scanning1: {
+      operator: 4,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-20T12:45:00",
+      endTime: "2024-08-20T17:55:00",
+      durationMin: 310
+    },
+    scanning2: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-20T18:00:00",
+      endTime: "2024-08-20T22:05:00",
+      durationMin: 245
+    },
+    review: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-21T08:00:00",
+      endTime: "2024-08-21T09:50:00",
+      durationMin: 110
+    },
     ready: true,
     converted: false,
     uploaded: false
@@ -75,16 +165,46 @@ export const boxes: BoxData[] = [
     notes: "047898 Exhibit (driver's license)",
     numberOfFolders: 29,
     numberOfPages: 2762,
-    inspector: "Joshua Harton",
-    preparator: "Joshua Harton",
-    scanner1: "Joshua Harton",
-    scanner2: "Yana Burdakova",
-    reviewer: "CJ Rowland",
-    inspTime: 10,
-    prepTime: 400,
-    scan1Time: 305,
-    scan2Time: 195,
-    reviewTime: 80,
+    inspection: {
+      operator: 5,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-21T08:00:00",
+      endTime: "2024-08-21T08:10:00",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 5,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-21T08:15:00",
+      endTime: "2024-08-21T14:55:00",
+      durationMin: 400
+    },
+    scanning1: {
+      operator: 5,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-21T15:00:00",
+      endTime: "2024-08-21T20:05:00",
+      durationMin: 305
+    },
+    scanning2: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-21T20:10:00",
+      endTime: "2024-08-21T23:25:00",
+      durationMin: 195
+    },
+    review: {
+      operator: 2,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T08:00:00",
+      endTime: "2024-08-22T09:20:00",
+      durationMin: 80
+    },
     ready: false,
     converted: false,
     uploaded: false
@@ -97,16 +217,46 @@ export const boxes: BoxData[] = [
     notes: "",
     numberOfFolders: 30,
     numberOfPages: 2430,
-    inspector: "Olivia Parker",
-    preparator: "Olivia Parker",
-    scanner1: "Olivia Parker",
-    scanner2: "Yana Burdakova",
-    reviewer: "Yana Burdakova",
-    inspTime: 10,
-    prepTime: 215,
-    scan1Time: 180,
-    scan2Time: 175,
-    reviewTime: 45,
+    inspection: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T08:00:00",
+      endTime: "2024-08-22T08:10:00",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T08:15:00",
+      endTime: "2024-08-22T12:50:00",
+      durationMin: 215
+    },
+    scanning1: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T13:00:00",
+      endTime: "2024-08-22T16:00:00",
+      durationMin: 180
+    },
+    scanning2: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T16:10:00",
+      endTime: "2024-08-22T18:05:00",
+      durationMin: 175
+    },
+    review: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-22T18:10:00",
+      endTime: "2024-08-22T18:55:00",
+      durationMin: 45
+    },
     ready: true,
     converted: false,
     uploaded: false
@@ -119,39 +269,1059 @@ export const boxes: BoxData[] = [
     notes: "",
     numberOfFolders: 30,
     numberOfPages: 2430,
-    inspector: "Olivia Parker",
-    preparator: "Olivia Parker",
-    scanner1: "Olivia Parker",
-    scanner2: "Yana Burdakova",
-    reviewer: "Yana Burdakova",
-    inspTime: 10,
-    prepTime: 215,
-    scan1Time: 180,
-    scan2Time: 175,
-    reviewTime: 45,
+    inspection: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-23T08:00:00",
+      endTime: "2024-08-23T08:10:00",
+      durationMin: 10
+    },
+    preparation: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-23T08:15:00",
+      endTime: "2024-08-23T12:50:00",
+      durationMin: 215
+    },
+    scanning1: {
+      operator: 3,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-23T13:00:00",
+      endTime: "2024-08-23T16:00:00",
+      durationMin: 180
+    },
+    scanning2: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-23T16:10:00",
+      endTime: "2024-08-23T18:05:00",
+      durationMin: 175
+    },
+    review: {
+      operator: 1,
+      inProgress: false,
+      isFinished: true,
+      startTime: "2024-08-23T18:10:00",
+      endTime: "2024-08-23T18:55:00",
+      durationMin: 45
+    },
     ready: true,
     converted: false,
     uploaded: false
   },
-  { id: 8, barcode: "CIV-169.0-1-169", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 9, barcode: "CIV-170.0-1-170", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 10, barcode: "CIV-171.0-1-171", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 11, barcode: "CIV-172.0-1-172", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 12, barcode: "CIV-173.0-1-173", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 13, barcode: "CIV-174.0-1-174", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 14, barcode: "CIV-175.0-1-175", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 15, barcode: "CIV-176.0-1-176", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 16, barcode: "CIV-177.0-1-177", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 17, barcode: "CIV-178.0-1-178", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 18, barcode: "CIV-179.0-1-179", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 19, barcode: "CIV-180.0-1-180", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 20, barcode: "CIV-181.0-1-181", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 21, barcode: "CIV-182.0-1-182", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 22, barcode: "CIV-183.0-1-183", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 23, barcode: "CIV-184.0-1-184", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 24, barcode: "CIV-185.0-1-185", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 25, barcode: "CIV-186.0-1-186", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 26, barcode: "CIV-187.0-1-187", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 28, barcode: "CIV-189.0-1-189", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
-  { id: 27, barcode: "CIV-188.0-1-188", folderRange: null, missingFolders: [], notes: null, numberOfFolders: null, numberOfPages: null, inspector: null, preparator: null, scanner1: null, scanner2: null, reviewer: null, inspTime: null, prepTime: null, scan1Time: null, scan2Time: null, reviewTime: null, ready: false, converted: false, uploaded: false },
+  { id: 8, barcode: "CIV-169.0-1-169",
+    folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false
+  },
+  { id: 9, barcode: "CIV-170.0-1-170",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 10, barcode: "CIV-171.0-1-171",
+    folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 11, barcode: "CIV-172.0-1-172",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 12, barcode: "CIV-173.0-1-173",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 13, barcode: "CIV-174.0-1-174",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 14, barcode: "CIV-175.0-1-175",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 15, barcode: "CIV-176.0-1-176",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 16, barcode: "CIV-177.0-1-177",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 17, barcode: "CIV-178.0-1-178",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 18, barcode: "CIV-179.0-1-179",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 19, barcode: "CIV-180.0-1-180",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 20, barcode: "CIV-181.0-1-181",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 21, barcode: "CIV-182.0-1-182",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 22, barcode: "CIV-183.0-1-183",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 23, barcode: "CIV-184.0-1-184",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 24, barcode: "CIV-185.0-1-185",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 25, barcode: "CIV-186.0-1-186",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 26, barcode: "CIV-187.0-1-187",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 28, barcode: "CIV-189.0-1-189",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
+  { id: 27, barcode: "CIV-188.0-1-188",     folderRange: null,
+    missingFolders: [],
+    notes: null,
+    numberOfFolders: null,
+    numberOfPages: null,
+    inspection: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    preparation: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning1: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    scanning2: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    review: {
+      operator: null,
+      inProgress: false,
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
+    },
+    ready: false,
+    converted: false,
+    uploaded: false},
   ];

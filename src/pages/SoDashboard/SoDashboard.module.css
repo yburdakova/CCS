@@ -26,28 +26,3 @@ legend {
   padding: 10px;
   font-size: 14px;
 }
-
-.boxSearch{
-  display: flex;
-  gap: 20px;
-}
-
-.fetchButton{
-  height: 45px;
-  align-self: flex-end;
-  padding: 0 40px;
-}
-
-.boxActivity{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.boxStage{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin: 10px 10px;
-}
-
