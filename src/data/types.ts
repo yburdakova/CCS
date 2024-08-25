@@ -43,10 +43,6 @@ export interface BoxData {
     isActive: boolean;
   }
 
-  export interface RootState {
-    user: UserState;
-  }
-
   export interface LoginCredentials {
     username: string;
     password: string;
@@ -86,6 +82,13 @@ export interface BoxData {
   export interface EventLogsState {
     eventLogs: EventLog[]
   }
+  export interface BoxesState {
+    boxes: BoxData[]
+  }  
+  
+  export interface TasksState {
+    tasks: TaskData[]
+  }
 export interface WorkEventsProps {
   userId: number;
   isActiveUser: boolean;
@@ -95,6 +98,13 @@ export interface BoxActivityProps {
   barcodes: string[];
   boxes: BoxData[];
   users: UserData[];
+}
+
+export interface RootState {
+  user: UserState;
+  eventLogs: EventLogsState;
+  boxes: BoxesState;
+  tasks: TasksState;
 }
   //============================================================= OLD
 
@@ -212,9 +222,11 @@ export interface CustomInputProps {
   required?: boolean;
   type: string;
   isMask?: boolean;
-  getValue?: (value: string) => void;  
+  getValue?: (value: string) => void;
   valueProps?: string;
   dark?: boolean;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  withDel?: boolean;
 }
 
 export interface OrderListItemProps {

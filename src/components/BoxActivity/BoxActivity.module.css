@@ -54,3 +54,21 @@
 .boxTaskButton{
   min-width: 200px;
 }
+
+.inProgressBtn {
+  background-color: #ffa500;
+  color: white;
+}
+
+.completedBtn {
+  background-color: #32cd32; /* Зеленый цвет для завершенного состояния */
+  color: white;
+  opacity: 1; /* Сохраняем нормальную видимость */
+}
+
+.boxTaskButton:disabled.completedBtn {
+  background-color: #085d08; /* Зеленый цвет */
+  color: white;
+  opacity: 1; /* Видимость сохраняется */
+  cursor: not-allowed; /* Изменяем курсор для дизейбл кнопок */
+}

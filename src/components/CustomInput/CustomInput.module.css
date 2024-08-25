@@ -81,7 +81,19 @@
   color:  #57606E;
   
 }
+.clearButton {
+  position: absolute;
+  right: 5px; /* Отступ от правого края, чтобы не пересекаться с toggleShowPassword */
+  top: 52%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #b2b2b1; /* Цвет иконки */
+  font-size: 1.2rem; /* Размер иконки */
+}
 
+.clearButton:hover {
+  color: #4A7BD0; /* Цвет иконки при наведении */
+}
 
 @media (prefers-color-scheme: light) {
   .input, .label, .inputDark, .labelDark {
