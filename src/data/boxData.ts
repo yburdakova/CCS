@@ -138,22 +138,22 @@ export const boxes: BoxData[] = [
       durationMin: 310
     },
     scanning2: {
-      operator: 2,
+      operator: null,
       inProgress: false,
-      isFinished: true,
-      startTime: "2024-08-20T18:00:00",
-      endTime: "2024-08-20T22:05:00",
-      durationMin: 245
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
     },
     review: {
-      operator: 3,
+      operator: null,
       inProgress: false,
-      isFinished: true,
-      startTime: "2024-08-21T08:00:00",
-      endTime: "2024-08-21T09:50:00",
-      durationMin: 110
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
     },
-    ready: true,
+    ready: false,
     converted: false,
     uploaded: false
   },
@@ -166,7 +166,7 @@ export const boxes: BoxData[] = [
     numberOfFolders: 29,
     numberOfPages: 2762,
     inspection: {
-      operator: 5,
+      operator: 6,
       inProgress: false,
       isFinished: true,
       startTime: "2024-08-21T08:00:00",
@@ -174,36 +174,36 @@ export const boxes: BoxData[] = [
       durationMin: 10
     },
     preparation: {
-      operator: 5,
-      inProgress: false,
-      isFinished: true,
+      operator: 6,
+      inProgress: true,
+      isFinished: false,
       startTime: "2024-08-21T08:15:00",
-      endTime: "2024-08-21T14:55:00",
-      durationMin: 400
+      endTime: null,
+      durationMin: 0
     },
     scanning1: {
-      operator: 5,
+      operator: 6,
       inProgress: false,
-      isFinished: true,
-      startTime: "2024-08-21T15:00:00",
-      endTime: "2024-08-21T20:05:00",
-      durationMin: 305
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
     },
     scanning2: {
-      operator: 1,
+      operator: null,
       inProgress: false,
-      isFinished: true,
-      startTime: "2024-08-21T20:10:00",
-      endTime: "2024-08-21T23:25:00",
-      durationMin: 195
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
     },
     review: {
-      operator: 2,
+      operator: null,
       inProgress: false,
-      isFinished: true,
-      startTime: "2024-08-22T08:00:00",
-      endTime: "2024-08-22T09:20:00",
-      durationMin: 80
+      isFinished: false,
+      startTime: null,
+      endTime: null,
+      durationMin: 0
     },
     ready: false,
     converted: false,
