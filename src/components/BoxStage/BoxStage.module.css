@@ -20,8 +20,17 @@
 }
 
 .boxTaskButton:disabled.completedBtn {
-  background-color: #085d08; /* Зеленый цвет */
-  color: white;
+  background-color: #177517; /* Зеленый цвет */
+  color: rgb(198, 196, 196);
   opacity: 1; /* Видимость сохраняется */
   cursor: not-allowed; /* Изменяем курсор для дизейбл кнопок */
+}
+
+@media only screen and (max-width: 480px) {
+.status{
+  display: none;
+}
+.boxTaskButton{
+  width: 100%;
+}
 }

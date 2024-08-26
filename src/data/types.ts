@@ -49,6 +49,10 @@ export interface BoxData {
     error: string | null;
     isFetching: boolean;
     isActive: boolean;
+    currentBox?: number | null;
+    currentBoxProcess: string | null;
+    isWorkEvent: boolean,
+    atWork: boolean
   }
 
   export interface LoginCredentials {
@@ -99,7 +103,6 @@ export interface BoxData {
   }
 export interface WorkEventsProps {
   userId: number;
-  isActiveUser: boolean;
 }
 
 export interface RootState {

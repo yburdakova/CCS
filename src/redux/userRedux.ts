@@ -8,6 +8,11 @@ const userSlice = createSlice({
     userType: null,
     error: null,
     isFetching: false,
+    currentBox: null,
+    currentBoxProcess: null,
+    isWorkEvent: false,
+    atWork: false
+
   } as UserState,
 
   reducers: {
@@ -36,6 +41,18 @@ const userSlice = createSlice({
     resetError: (state) => {
       state.error = null;
     },
+    updateCurrentBox(state, action) {
+      state.currentBox = action.payload;
+    },
+    updateCurrentBoxProcess(state, action) {
+      state.currentBoxProcess = action.payload;
+    },
+    setIsWorkEvent(state, action) {
+      state.isWorkEvent = action.payload;
+    },
+    setAtWork(state, action) {
+      state.atWork = action.payload;
+    },
   }
 });
 
@@ -46,6 +63,10 @@ export const {
   loginFailure,
   resetError,
   adminAccess,
+  setAtWork,
+  setIsWorkEvent,
+  updateCurrentBox,
+  updateCurrentBoxProcess
 } = userSlice.actions;
 
 export default userSlice.reducer;

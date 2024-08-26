@@ -2,6 +2,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import styles from './ProductionSheet.module.css';
+import { formatDateTime } from '../../middleware/formatDate';
 
 const ProductionSheet = () => {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
@@ -18,8 +19,9 @@ const ProductionSheet = () => {
             {tasks.map(task => (
               <li key={task.id} className={styles.taskItem}>
                 <div className={styles.taskName}>{task.activity}</div>
-                <div className={styles.taskTime}>Start: {new Date(task.startTime).toLocaleString()}</div>
-                <div className={styles.taskTime}>End: {task.endTime ? new Date(task.endTime).toLocaleString() : 'In Progress'}</div>
+                <div className={styles.taskName}>{task.taskType}</div>
+                <div className={styles.taskTime}>Start: {formatDateTime(task.startTime)}</div>
+                <div className={styles.taskTime}>End: {task.endTime ? formatDateTime(task.endTime) : 'In Progress'}</div>
               </li>
             ))}
           </ul>

@@ -10,12 +10,12 @@ const TlDashboard = () => {
   return (
     <div className='outletBox'>
       <div className="contentBlock">
-        <h3>Active Users</h3>
+        <h3>List of operators at work:</h3>
         <ul>
           {activeUsers.length > 0 ? (
             activeUsers.map(user => (
-              <li key={user.id}>
-                {user.name}
+              <li key={user.id} >
+                <h4>{user.name}</h4>
               </li>
             ))
           ) : (
