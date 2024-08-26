@@ -26,7 +26,7 @@ const CustomInput = ({ label, type, required, getValue, valueProps, dark, withDe
   };
 
   const handleClear = () => {
-    setValue(''); 
+    setValue('');
     if (getValue) {
       getValue('');
     }

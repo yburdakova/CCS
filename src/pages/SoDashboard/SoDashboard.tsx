@@ -13,9 +13,6 @@ const SoDashboard = () => {
   const user = useSelector((state: RootState) =>
     currentUser ? state.users.users.find(u => u.id === currentUser.id) : null
   );
-  const users = useSelector((state: RootState) => state.users.users);
-  const barcodes = useSelector((state: RootState) => state.boxes.barcodes);
-  const boxes = useSelector((state: RootState) => state.boxes.boxes);
 
   const isActiveUser = user?.isActive ?? false;
   const dispatch = useDispatch<AppDispatch>();
@@ -57,20 +54,22 @@ const SoDashboard = () => {
 
   return (
     <div className='outletBox'>
-      <div className="contentBlock">
-        <div className={styles.workStatusBox}>
-          <button onClick={handleWorkToggle} className={isActiveUser ? styles.workOnButton : styles.workOffButton}>
-            {isActiveUser ? 'End Work' : 'Start Work'}
-          </button>
-          <div className={styles.workStatusLabel}>Status: {isActiveUser ? 'at work' : 'not at work'}</div>
+      <div className="wrapper">
+        <div className="contentBlock">
+          <div className={styles.workStatusBox}>
+            <button onClick={handleWorkToggle} className={isActiveUser ? styles.workOnButton : styles.workOffButton}>
+              {isActiveUser ? 'End Work' : 'Start Work'}
+            </button>
+            <div className={styles.workStatusLabel}>Status: {isActiveUser ? 'at work' : 'not at work'}</div>
+          </div>
         </div>
-      </div>
-      <WorkEvents userId={user!.id} isActiveUser={isActiveUser} />
-      <div className="contentBlock">
-        <fieldset>
-          <legend>Box Activity</legend>
-          <BoxActivity barcodes={barcodes} boxes={boxes} users={users} />
-        </fieldset>
+        <WorkEvents userId={user!.id} isActiveUser={isActiveUser} />
+        <div className="contentBlock">
+          <fieldset>
+            <legend>Box Activity</legend>
+            <BoxActivity/>
+          </fieldset>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import CustomInput from "./CustomInput/CustomInput";
 import MenuItem from "./MenuItem/MenuItem";
 import WorkEvents from "./WorkEvents/WorkEvents";
 import BoxActivity from "./BoxActivity/BoxActivity";
+import BoxStage from "./BoxStage/BoxStage";
 
 export {
   Header,
@@ -11,5 +12,6 @@ export {
   CustomInput,
   MenuItem,
   WorkEvents,
-  BoxActivity
+  BoxActivity,
+  BoxStage
 }

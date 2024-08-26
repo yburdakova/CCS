@@ -7,14 +7,22 @@ export interface UserData {
   password: string;
   userkey: number;
   isActive: boolean;
+  isWorkEvent: boolean;
 }
+
+export interface periodOfTime {
+    id: number;
+    startTime: string | null;
+    endTime:  string | null;
+  }
+
 export interface BoxTaskTypes {
   operator: number | null;
   inProgress: boolean;
   isFinished: boolean;
-  startTime: string | null;
-  endTime: string | null;
-  durationMin: number;
+  isPaused: boolean;
+  periodsOfTime: periodOfTime[] | [];
+  totalDurationMin: number;
 }
 
 export interface BoxData {
@@ -84,8 +92,8 @@ export interface BoxData {
   }
   export interface BoxesState {
     boxes: BoxData[]
-  }  
-  
+    barcodes: string []
+  }
   export interface TasksState {
     tasks: TaskData[]
   }
@@ -94,128 +102,27 @@ export interface WorkEventsProps {
   isActiveUser: boolean;
 }
 
-export interface BoxActivityProps {
-  barcodes: string[];
-  boxes: BoxData[];
-  users: UserData[];
-}
-
 export interface RootState {
   user: UserState;
+  users: UsersState;
   eventLogs: EventLogsState;
   boxes: BoxesState;
   tasks: TasksState;
 }
-  //============================================================= OLD
 
-export interface CategoryData {
-  _id?: string;
-  title: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+export interface ProcessStatus {
+  available: boolean;
+  status: string;
+  isFinished: boolean;
 }
 
-export interface NotificationData {
-  _id: string;
-  toUser: string;
-  fromUser: string;
-  message: string;
-  isRead: boolean;
-  type: NotificationType;
-  forAdmin: boolean;
-  data?: {
-    requestId: string;
-  };
-  createdAt: Date;
+export interface ProcessStatuses {
+  inspection: ProcessStatus;
+  preparation: ProcessStatus;
+  scanning1: ProcessStatus;
+  scanning2: ProcessStatus;
+  review: ProcessStatus;
 }
-export interface HisoryPrice {
-    _id?: string;
-    price: number;
-    date?: Date;
-}
-
-export interface TransformedDataItem {
-  date: string;
-  price: number;
-}
-
-export interface ProductData {
-  _id?: string;
-  customId? : string;
-  title: string;
-  description?: string;
-  category: string;
-  measure: string;
-  price: number;
-  quantity: number;
-  priceHistory: HisoryPrice[]
-  createdAt?: Date;
-  updatedAt?: Date;
-}
-
-export interface InputRefs {
-  [key: string]: HTMLInputElement | null;
-}
-
-export interface OrderData {
-  _id?: string;
-  userId? : string;
-  products?: ProductData[];
-  amount?: number;
-  status?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
-
-export interface CustomerRequest {
-  _id: string;
-  title: string;
-  email: string;
-  contactName: string;
-  contactPhone: string;
-  type: 'newUser' | 'newPassword' | 'completed' | 'rejected';
-  data?:{
-    relatedId: string;
-  };
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-
-
-export interface AdminState {
-  customerRequests: CustomerRequest[],
-  users: UserData[];
-  orders: OrderData[];
-  products: ProductData[];
-  categories: CategoryData[];
-  isFetching: boolean;
-  error: string | null;
-  response: UserData | ProductData | null;
-}
-
-export interface NotificationsState {
-  notifyCounter: number,
-  notifications: NotificationData[];
-  focusedId: string;
-  actualNotificationId: string;
-  isFetching: boolean,
-  error: string | null;
-}
-
-export interface OrderState {
-  products: ProductData[],
-  quantity: number,
-  totalPrice: number,
-  isOpen: boolean
-}
-
-export type SuccessAction<T> = (data: T) => { type: string; payload: T };
-
-export interface ToggleStatusData {
-  isActive: boolean;
-}
-
 export interface CustomInputProps {
   label: string;
   placeholder: string;
@@ -227,80 +134,4 @@ export interface CustomInputProps {
   dark?: boolean;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   withDel?: boolean;
-}
-
-export interface OrderListItemProps {
-  product: ProductData; 
-
-  index: number;
-  createdOrder?: boolean;
-}
-
-export interface CustomerItemProps{
-  customer: UserData
-}
-
-export interface OrderItemAdmProps {
-  order: OrderData;
-  reloadOrders?: () => void 
-}
-export interface ProductItemProps {
-  product: ProductData;
-  focused?: boolean;
-  reloadProducts?: () => void 
-}
-
-
-export interface TableRowProps {
-  rowData: ProductData
-}
-
-export interface OrderItemProps {
-  order: OrderData;
-}
-
-
-export type NotificationType = 
-  'customerRequest' | 
-  'newOrder' | 
-  'newProduct' | 
-  'priceChange' | 
-  'statusChange' | 
-  'orderStatusChange';
-
-export interface ProductStatsItem{
-  value?: number;
-  categoryTitle: string;
-  quantity: number;
-}
-
-export interface CustDashboardSlice {
-  products: ProductData[],
-  productStats: ProductStatsItem[],
-  orders: OrderData[],
-  ordersStats: OrderStatsItem[],
-  totalAmount: number,
-  monthAmount:[]
-}
-export interface OrderStatsItem{
-  value?: number;
-  statusTitle: string;
-  quantity: number;
-}
-
-export interface ProductStatsItem{
-  value?: number;
-  categoryTitle: string;
-  quantity: number;
-}
-
-
-export interface AdmDashboardSlice {
-  favoriteProducts: string[];
-  loading: boolean;
-  error: null | string;
-}
-
-export interface ProductStatsBarChartProps {
-  type: 'products' | 'orders';
 }

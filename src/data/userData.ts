@@ -6,9 +6,10 @@ export const users: UserData[] = [
     name: "Yana Burdakova",
     role: "tl",
     username: "yanab",
-    password:"yanab",
+    password: "yanab",
     userkey: 555,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const users: UserData[] = [
     username: "cjr",
     password: "cjr",
     userkey: 111,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ export const users: UserData[] = [
     username: "oliviap",
     password: "oliviap",
     userkey: 222,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ export const users: UserData[] = [
     username: "jacobf",
     password: "jacobf",
     userkey: 333,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 5,
@@ -44,7 +48,8 @@ export const users: UserData[] = [
     username: "chrisk",
     password: "chrisk",
     userkey: 444,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 6,
@@ -53,7 +58,8 @@ export const users: UserData[] = [
     username: "joshuah",
     password: "joshuah",
     userkey: 666,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 7,
@@ -62,7 +68,8 @@ export const users: UserData[] = [
     username: "mahaa",
     password: "mahaa",
     userkey: 777,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 8,
@@ -71,7 +78,8 @@ export const users: UserData[] = [
     username: "laurenm",
     password: "laurenm",
     userkey: 888,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 9,
@@ -80,7 +88,8 @@ export const users: UserData[] = [
     username: "brandonp",
     password: "brandonp",
     userkey: 999,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 10,
@@ -89,7 +98,8 @@ export const users: UserData[] = [
     username: "anastasiag",
     password: "anastasiag",
     userkey: 1111,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   },
   {
     id: 11,
@@ -98,6 +108,7 @@ export const users: UserData[] = [
     username: "carters",
     password: "carters",
     userkey: 2222,
-    isActive: false
+    isActive: false,
+    isWorkEvent: false
   }
 ];

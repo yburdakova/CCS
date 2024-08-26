@@ -26,6 +26,12 @@ const usersSlice = createSlice({
         user.isActive = false;
       }
     },
+    toggleUserWorkEvent: (state, action: PayloadAction<{ userId: number; isWorkEvent: boolean }>) => {
+      const user = state.users.find(user => user.id === action.payload.userId);
+      if (user) {
+        user.isWorkEvent = action.payload.isWorkEvent;
+      }
+    },
     setFetching: (state, action: PayloadAction<boolean>) => {
       state.isFetching = action.payload;
     },
@@ -41,6 +47,7 @@ export const {
   endWork,
   setFetching,
   setError,
+  toggleUserWorkEvent
 } = usersSlice.actions;
 
 export default usersSlice.reducer;

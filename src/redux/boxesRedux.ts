@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BoxData } from "../data/types";
+import { BoxData, BoxesState } from "../data/types";
 
-interface BoxesState {
-  boxes: BoxData[];
-  barcodes: string[];
-}
 
 const initialState: BoxesState = {
   boxes: [],

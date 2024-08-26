@@ -12,7 +12,22 @@
   min-height: 100vh;
 
 }
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
 
+}
+
+.outletBox {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.wrapper{
+  max-width: fit-content;
+}
 .outletBox {
   flex-grow: 1;
   overflow-y: auto;

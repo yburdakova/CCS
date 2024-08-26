@@ -13,41 +13,71 @@ export const boxes: BoxData[] = [
       operator: 2,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T08:00:00 ",
-      endTime:  "2024-08-19T08:10:00 ",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T08:10:00",
+          endTime: "2024-08-19T08:50:00",
+        }
+      ],
+      totalDurationMin: 40
     },
     preparation: {
       operator: 2,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T08:10:00 ",
-      endTime:  "2024-08-19T08:50:00 ",
-      durationMin: 40
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T08:10:00",
+          endTime: "2024-08-19T08:50:00",
+        }
+      ],
+      totalDurationMin: 40
     },
     scanning1: {
       operator: 2,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T08:50:00 ",
-      endTime:  "2024-08-19T09:50:00 ",
-      durationMin: 60
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T08:50:00",
+          endTime: "2024-08-19T09:50:00",
+        }
+      ],
+      totalDurationMin: 60
     },
     scanning2: {
       operator: 4,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T09:50:00 ",
-      endTime:  "2024-08-19T11:30:00 ",
-      durationMin: 100
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T09:50:00",
+          endTime: "2024-08-19T11:30:00",
+        }
+      ],
+      totalDurationMin: 100
     },
     review: {
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T11:30:00 ",
-      endTime:  "2024-08-19T11:55:00 ",
-      durationMin: 25
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T11:30:00",
+          endTime: "2024-08-19T11:55:00",
+        }
+      ],
+      totalDurationMin: 25
     },
     ready: true,
     converted: true,
@@ -65,41 +95,71 @@ export const boxes: BoxData[] = [
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T09:00:00",
-      endTime: "2024-08-19T09:10:00",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T09:00:00",
+          endTime: "2024-08-19T09:10:00",
+        }
+      ],
+      totalDurationMin: 10
     },
     preparation: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T09:15:00",
-      endTime: "2024-08-19T14:00:00",
-      durationMin: 285
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T09:15:00",
+          endTime: "2024-08-19T14:00:00",
+        }
+      ],
+      totalDurationMin: 285
     },
     scanning1: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T14:15:00",
-      endTime: "2024-08-19T18:00:00",
-      durationMin: 225
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T14:15:00",
+          endTime: "2024-08-19T18:00:00",
+        }
+      ],
+      totalDurationMin: 225
     },
     scanning2: {
       operator: 2,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-19T18:15:00",
-      endTime: "2024-08-19T22:00:00",
-      durationMin: 225
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-19T18:15:00",
+          endTime: "2024-08-19T22:00:00",
+        }
+      ],
+      totalDurationMin: 225
     },
     review: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-20T08:00:00",
-      endTime: "2024-08-20T08:50:00",
-      durationMin: 50
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-20T08:00:00",
+          endTime: "2024-08-20T08:50:00",
+        }
+      ],
+      totalDurationMin: 50
     },
     ready: true,
     converted: true,
@@ -117,41 +177,59 @@ export const boxes: BoxData[] = [
       operator: 4,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-20T08:00:00",
-      endTime: "2024-08-20T08:10:00",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-20T08:00:00",
+          endTime: "2024-08-20T08:10:00",
+        }
+      ],
+      totalDurationMin: 10
     },
     preparation: {
       operator: 4,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-20T08:15:00",
-      endTime: "2024-08-20T12:30:00",
-      durationMin: 255
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-20T08:15:00",
+          endTime: "2024-08-20T12:30:00",
+        }
+      ],
+      totalDurationMin: 255
     },
     scanning1: {
       operator: 4,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-20T12:45:00",
-      endTime: "2024-08-20T17:55:00",
-      durationMin: 310
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-20T12:45:00",
+          endTime: "2024-08-20T17:55:00",
+        }
+      ],
+      totalDurationMin: 310
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -169,41 +247,53 @@ export const boxes: BoxData[] = [
       operator: 6,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-21T08:00:00",
-      endTime: "2024-08-21T08:10:00",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-21T08:00:00",
+          endTime: "2024-08-21T08:10:00",
+        }
+      ],
+      totalDurationMin: 10
     },
     preparation: {
       operator: 6,
       inProgress: true,
       isFinished: false,
-      startTime: "2024-08-21T08:15:00",
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-21T08:15:00",
+          endTime: null,
+        }
+      ],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: 6,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -221,41 +311,71 @@ export const boxes: BoxData[] = [
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-22T08:00:00",
-      endTime: "2024-08-22T08:10:00",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-22T08:00:00",
+          endTime: "2024-08-22T08:10:00",
+        }
+      ],
+      totalDurationMin: 10
     },
     preparation: {
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-22T08:15:00",
-      endTime: "2024-08-22T12:50:00",
-      durationMin: 215
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-22T08:15:00",
+          endTime: "2024-08-22T12:50:00",
+        }
+      ],
+      totalDurationMin: 215
     },
     scanning1: {
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-22T13:00:00",
-      endTime: "2024-08-22T16:00:00",
-      durationMin: 180
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-22T13:00:00",
+          endTime: "2024-08-22T16:00:00",
+        }
+      ],
+      totalDurationMin: 180
     },
     scanning2: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-22T16:10:00",
-      endTime: "2024-08-22T18:05:00",
-      durationMin: 175
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-22T16:10:00",
+          endTime: "2024-08-22T18:05:00",
+        }
+      ],
+      totalDurationMin: 175
     },
     review: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-22T18:10:00",
-      endTime: "2024-08-22T18:55:00",
-      durationMin: 45
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-22T18:10:00",
+          endTime: "2024-08-22T18:55:00",
+        }
+      ],
+      totalDurationMin: 45
     },
     ready: true,
     converted: false,
@@ -273,41 +393,71 @@ export const boxes: BoxData[] = [
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-23T08:00:00",
-      endTime: "2024-08-23T08:10:00",
-      durationMin: 10
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-23T08:00:00",
+          endTime: "2024-08-23T08:10:00",
+        }
+      ],
+      totalDurationMin: 10
     },
     preparation: {
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-23T08:15:00",
-      endTime: "2024-08-23T12:50:00",
-      durationMin: 215
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-23T08:15:00",
+          endTime: "2024-08-23T12:50:00",
+        }
+      ],
+      totalDurationMin: 215
     },
     scanning1: {
       operator: 3,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-23T13:00:00",
-      endTime: "2024-08-23T16:00:00",
-      durationMin: 180
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-23T13:00:00",
+          endTime: "2024-08-23T16:00:00",
+        }
+      ],
+      totalDurationMin: 180
     },
     scanning2: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-23T16:10:00",
-      endTime: "2024-08-23T18:05:00",
-      durationMin: 175
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-23T16:10:00",
+          endTime: "2024-08-23T18:05:00",
+        }
+      ],
+      totalDurationMin: 175
     },
     review: {
       operator: 1,
       inProgress: false,
       isFinished: true,
-      startTime: "2024-08-23T18:10:00",
-      endTime: "2024-08-23T18:55:00",
-      durationMin: 45
+      isPaused: false,
+      periodsOfTime: [
+        {
+          id: 1,
+          startTime: "2024-08-23T18:10:00",
+          endTime: "2024-08-23T18:55:00",
+        }
+      ],
+      totalDurationMin: 45
     },
     ready: true,
     converted: false,
@@ -323,41 +473,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -372,41 +522,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -421,41 +571,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -469,41 +619,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -517,41 +667,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -565,41 +715,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -613,41 +763,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -661,41 +811,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -709,41 +859,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -757,41 +907,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -805,41 +955,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -853,41 +1003,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -901,41 +1051,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -949,41 +1099,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -997,41 +1147,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1045,41 +1195,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1093,41 +1243,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1141,41 +1291,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1189,41 +1339,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1237,41 +1387,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,
@@ -1285,41 +1435,41 @@ export const boxes: BoxData[] = [
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     preparation: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning1: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     scanning2: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     review: {
       operator: null,
       inProgress: false,
       isFinished: false,
-      startTime: null,
-      endTime: null,
-      durationMin: 0
+      isPaused: false,
+      periodsOfTime: [],
+      totalDurationMin: 0
     },
     ready: false,
     converted: false,

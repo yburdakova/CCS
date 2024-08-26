@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../redux/store';
 import { startTask, endTask } from '../../redux/tasksRedux';
 import { addEventLog } from '../../redux/eventsRedux';
+import { toggleUserWorkEvent } from '../../redux/usersRedux';
 import { timeToString } from '../../middleware/formatDate';
 import { ActivityType, WorkEventsProps } from '../../data/types';
 import { useEffect, useState } from 'react';
@@ -15,10 +16,12 @@ const WorkEvents = ({ userId, isActiveUser }: WorkEventsProps) => {
     const activeTask = tasks.find(task => task.userId === userId && task.endTime === null);
     if (activeTask) {
       setActiveActivity(activeTask.activity);
+      dispatch(toggleUserWorkEvent({ userId, isWorkEvent: true }));
     } else {
       setActiveActivity(null);
+      dispatch(toggleUserWorkEvent({ userId, isWorkEvent: false }));
     }
-  }, [tasks, userId]);
+  }, [tasks, userId, dispatch]);
 
   const handleManagementTask = (activity: ActivityType) => {
     const timestamp = timeToString(new Date());
@@ -32,6 +35,7 @@ const WorkEvents = ({ userId, isActiveUser }: WorkEventsProps) => {
         taskId: activeManagementTask.id,
         timestamp: timestamp,
       }));
+      dispatch(toggleUserWorkEvent({ userId, isWorkEvent: false }));
       setActiveActivity(null);
     } else {
       const newTaskId = tasks.length + 1;
@@ -51,6 +55,7 @@ const WorkEvents = ({ userId, isActiveUser }: WorkEventsProps) => {
         taskId: newTaskId,
         timestamp: timestamp,
       }));
+      dispatch(toggleUserWorkEvent({ userId, isWorkEvent: true }));
       setActiveActivity(activity);
     }
   };
