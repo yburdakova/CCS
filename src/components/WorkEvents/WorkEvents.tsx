@@ -21,14 +21,12 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
   const activeActivity = activeManagementTask?.activity;
 
   useEffect(() => {
-    // Обновляем isWorkEvent в userRedux на основе текущего активного Management Activity
-    dispatch(setIsWorkEvent(!!activeManagementTask)); // Исправлено
+    dispatch(setIsWorkEvent(!!activeManagementTask));
   }, [tasks, userId, dispatch, activeManagementTask]);
 
   const handleManagementTask = (activity: ActivityType) => {
     const timestamp = timeToString(new Date());
 
-    // Завершение текущей задачи по процессу коробки
     const activeTask = tasks.find(task => task.userId === userId && task.endTime === null);
     if (activeTask) {
       dispatch(endTask(activeTask.id));
@@ -41,7 +39,6 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
     }
 
     if (activeManagementTask) {
-      // Завершение текущего Management Activity
       dispatch(endTask(activeManagementTask.id));
       dispatch(addEventLog({
         userId: userId,
@@ -49,9 +46,9 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
         taskId: activeManagementTask.id,
         timestamp: timestamp,
       }));
-      dispatch(setIsWorkEvent(false)); // Исправлено
+      dispatch(setIsWorkEvent(false));
     } else {
-      // Начало нового Management Activity
+
       const newTaskId = tasks.length + 1;
 
       dispatch(startTask({
@@ -69,7 +66,7 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
         taskId: newTaskId,
         timestamp: timestamp,
       }));
-      dispatch(setIsWorkEvent(true)); // Исправлено
+      dispatch(setIsWorkEvent(true));
     }
   };
 

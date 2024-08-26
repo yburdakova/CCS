@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './BoxActivity.module.css';
 import { BoxStage, CustomInput } from '../../components';
-import { BoxData, RootState, TaskData, } from '../../data/types';
+import { BoxData, RootState } from '../../data/types';
 import { timeToString } from '../../middleware/formatDate';
 import { startTask } from '../../redux/tasksRedux';
 import { AppDispatch } from '../../redux/store';
 import { updateCurrentBox } from '../../redux/userRedux';
+import { getTaskActivity } from '../../middleware/taskUtils';
 
 const BoxActivity = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,6 +16,7 @@ const BoxActivity = () => {
   const boxes = useSelector((state: RootState) => state.boxes.boxes);
   const currentBoxId = useSelector((state: RootState) => state.user.currentBox);
   const users = useSelector((state: RootState) => state.users.users);
+  const tasks = useSelector((state: RootState) => state.tasks.tasks);
 
   const currentUserFromUsers = users.find(user => user.id === currentUser?.id);
 
@@ -27,8 +29,10 @@ const BoxActivity = () => {
   useEffect(() => {
     if (currentUserFromUsers) {
       setIsBoxActivityAvailable(currentUserFromUsers.isActive && !currentUserFromUsers.isWorkEvent);
+    } else {
+      setIsBoxActivityAvailable(false);
     }
-  }, [currentUserFromUsers?.isActive, currentUserFromUsers?.isWorkEvent]);
+  }, [currentUserFromUsers]);
 
   useEffect(() => {
     if (currentBoxId) {
@@ -89,10 +93,8 @@ const handleProcessAction = (processType: keyof BoxData) => {
 
   const timestamp = timeToString(new Date());
 
-  // Получаем текущую активную задачу
   const activeTask = tasks.find(task => task.boxId === selectedBox.id && task.endTime === null);
 
-  // Если есть активная задача, завершаем ее
   if (activeTask) {
     dispatch({
       type: 'tasks/endTask',
