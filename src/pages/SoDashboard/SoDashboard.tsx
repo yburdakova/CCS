@@ -6,8 +6,10 @@ import { timeToString } from '../../middleware/formatDate';
 import styles from './SoDashboard.module.css';
 import { endWork, startWork } from '../../redux/usersRedux';
 import { WorkEvents, BoxActivity } from '../../components';
-import { setAtWork, updateCurrentBoxProcess } from '../../redux/userRedux';
+import { setAtWork } from '../../redux/userRedux';
 import { updateBox } from '../../redux/boxesRedux';
+import { BoxData, BoxTaskTypes, PeriodOfTime } from '../../data/types';
+
 
 const SoDashboard = () => {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
@@ -25,10 +27,9 @@ const SoDashboard = () => {
   const startWorkFunction = () => {
     console.log("Work is started");
     const timestamp = timeToString(new Date());
-    
     if (user) {
       dispatch(startWork(user.id));
-      dispatch(setAtWork(true)); // Обновление состояния в user
+      dispatch(setAtWork(true));
       dispatch(addEventLog({
         userId: user.id,
         eventType: "Work Start",
@@ -44,9 +45,8 @@ const SoDashboard = () => {
   
     if (user) {
       dispatch(endWork(user.id));
-      dispatch(setAtWork(false)); // Обновление состояния в user
+      dispatch(setAtWork(false));
   
-      // Завершение активной задачи
       const activeTask = tasks.find(task => task.userId === user.id && task.endTime === null);
       if (activeTask) {
         dispatch(endTask(activeTask.id));
@@ -58,40 +58,32 @@ const SoDashboard = () => {
         }));
         console.log("Task ended and event logged");
       }
-  
-      // Обновление процесса коробки
+
       if (currentBoxId) {
         const currentBox = boxes.find(box => box.id === currentBoxId);
-        const currentProcessType = currentBox ? currentBoxProcess : null;
-  
+        const currentProcessType = currentBoxProcess as keyof BoxData;
         if (currentBox && currentProcessType) {
-          const currentProcess = { ...currentBox[currentProcessType] };  // Создаем новый объект процесса
-  
-          // Обновление времени окончания последнего периода и установка isPaused в true
-          if (currentProcess && currentProcess.inProgress) {
-            const updatedPeriodsOfTime = currentProcess.periodsOfTime.map((period, index) => 
+          const currentProcess = currentBox[currentProcessType] as BoxTaskTypes;
+          if (currentProcess && currentProcess.periodsOfTime) {
+            const updatedPeriodsOfTime = currentProcess.periodsOfTime.map((period: PeriodOfTime, index: number) =>
               index === currentProcess.periodsOfTime.length - 1
                 ? { ...period, endTime: timestamp }
                 : period
             );
-  
             const updatedProcess = {
               ...currentProcess,
               periodsOfTime: updatedPeriodsOfTime,
               isPaused: true,
               inProgress: false,
             };
-  
-            // Обновление состояния коробки
+
             const updatedBox = {
               ...currentBox,
               [currentProcessType]: updatedProcess,
             };
-  
+
             dispatch(updateBox(updatedBox));
-  
-            // Выводим обновленные данные в консоль
-            console.log("Updated Box Data after endWork:", updatedBox); 
+            console.log("Updated Box Data after endWork:", updatedBox);
           } else {
             console.warn("No active process found to update.");
           }
@@ -101,7 +93,7 @@ const SoDashboard = () => {
       } else {
         console.warn("No current box ID found.");
       }
-  
+
       dispatch(addEventLog({
         userId: user.id,
         eventType: "Work End",
@@ -111,8 +103,8 @@ const SoDashboard = () => {
       console.log("Work end event logged");
     }
   };
-  
-  
+
+
   const handleWorkToggle = () => {
     if (isActiveUser) {
       endWorkFunction();
@@ -132,7 +124,7 @@ const SoDashboard = () => {
             <div className={styles.workStatusLabel}>Status: {isActiveUser ? 'at work' : 'not at work'}</div>
           </div>
         </div>
-        <WorkEvents userId={user!.id} isActiveUser={isActiveUser} />
+        <WorkEvents userId={user!.id}/>
         <div className="contentBlock">
           <fieldset>
             <legend>Box Activity</legend>

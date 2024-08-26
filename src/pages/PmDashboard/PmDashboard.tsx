@@ -1,6 +1,4 @@
-import React from 'react'
-import { RootState } from '../../data/types';
-import { useSelector } from 'react-redux';
+
 
 const PmDashboard = () => {
 

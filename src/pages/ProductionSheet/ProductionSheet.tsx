@@ -19,7 +19,6 @@ const ProductionSheet = () => {
             {tasks.map(task => (
               <li key={task.id} className={styles.taskItem}>
                 <div className={styles.taskName}>{task.activity}</div>
-                <div className={styles.taskName}>{task.taskType}</div>
                 <div className={styles.taskTime}>Start: {formatDateTime(task.startTime)}</div>
                 <div className={styles.taskTime}>End: {task.endTime ? formatDateTime(task.endTime) : 'In Progress'}</div>
               </li>

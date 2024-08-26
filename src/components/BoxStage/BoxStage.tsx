@@ -10,12 +10,14 @@ interface BoxStageProps {
   process: BoxTaskTypes | null;
   processType: keyof BoxData;
   selectedBox: BoxData | null;
+  onProcessAction: (processType: keyof BoxData) => void;
 }
 
 const BoxStage: React.FC<BoxStageProps> = ({
   process,
   processType,
-  selectedBox
+  selectedBox,
+  onProcessAction
 }) => {
   const dispatch = useDispatch();
   
@@ -101,6 +103,8 @@ const BoxStage: React.FC<BoxStageProps> = ({
 
     dispatch(updateBox(updatedBox));
     console.log("Updated Box Data after process action:", updatedBox);
+      console.log('call onProcessAction function')
+      onProcessAction(processType); // Передача типа процесса в функцию управления задачами
   };
 
   const shouldDisableButton = (

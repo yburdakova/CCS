@@ -1,9 +1,8 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 
 const TlDashboard = () => {
-  const activeUsers = useSelector((state: RootState) => 
+  const activeUsers = useSelector((state: RootState) =>
     state.users.users.filter(user => user.isActive)
   );
 

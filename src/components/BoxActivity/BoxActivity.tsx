@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './BoxActivity.module.css';
 import { BoxStage, CustomInput } from '../../components';
-import { BoxData, BoxTaskTypes, RootState, } from '../../data/types';
+import { BoxData, RootState, TaskData, } from '../../data/types';
 import { timeToString } from '../../middleware/formatDate';
 import { startTask } from '../../redux/tasksRedux';
 import { AppDispatch } from '../../redux/store';
-import { updateBox } from '../../redux/boxesRedux';
-import { updateCurrentBox } from '../../redux/userRedux'; // Импортируем экшн для обновления текущей коробки
+import { updateCurrentBox } from '../../redux/userRedux';
 
 const BoxActivity = () => {
   const dispatch = useDispatch<AppDispatch>();
-  
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
   const barcodes = useSelector((state: RootState) => state.boxes.barcodes);
   const boxes = useSelector((state: RootState) => state.boxes.boxes);
@@ -33,7 +31,6 @@ const BoxActivity = () => {
   }, [currentUserFromUsers?.isActive, currentUserFromUsers?.isWorkEvent]);
 
   useEffect(() => {
-    // Следим за обновлением currentBoxId в стейте и обновляем selectedBox на основе этого ID
     if (currentBoxId) {
       const box = boxes.find((box: BoxData) => box.id === currentBoxId);
       setSelectedBox(box || null);
@@ -73,80 +70,55 @@ const BoxActivity = () => {
     const box = boxes.find((box: BoxData) => box.barcode === barcodeInput);
     if (box) {
       setSelectedBox(box);
-      dispatch(updateCurrentBox(box.id)); // Обновляем текущую коробку в стейте Redux для user
-      setBarcodeInput(''); // Очищаем инпут
+      dispatch(updateCurrentBox(box.id));
+      setBarcodeInput('');
+      console.log(`Selected box with barcode: ${box.barcode} and ID: ${box.id}`);
       localStorage.setItem('selectedBoxId', box.id.toString());
     } else {
       setSelectedBox(null);
-      dispatch(updateCurrentBox(null)); // Очищаем текущую коробку в стейте Redux
+      dispatch(updateCurrentBox(null));
+      console.log('No box found with the provided barcode.');
       localStorage.removeItem('selectedBoxId');
     }
   };
 
-  const handleProcessAction = (processType: keyof BoxData) => {
-    if (!selectedBox || !currentUserFromUsers) return;
-  
-    console.log(`Start processing ${processType} of ${selectedBox.barcode}`);
-  
-    // Текущее время
-    const timestamp = timeToString(new Date());
-  
-    // Объект процесса
-    const process = selectedBox[processType] as BoxTaskTypes;
-  
-    // Обновляем объект коробки с новой информацией о процессе
-    const updatedBox: BoxData = {
-      ...selectedBox,
-      [processType]: {
-        ...process,
-        inProgress: true,
-        operator: currentUserFromUsers.id,
-        periodsOfTime: [
-          ...process.periodsOfTime,
-          {
-            id: process.periodsOfTime.length + 1,
-            startTime: timestamp,
-            endTime: null,
-          },
-        ],
-      },
-    };
-  
-    // Если процесс - это инспекция, обновляем оператора и статус для следующих процессов
-    if (processType === 'inspection') {
-      updatedBox.preparation = {
-        ...updatedBox.preparation,
-        operator: currentUserFromUsers.id,
-        inProgress: false,
-      };
-      updatedBox.scanning1 = {
-        ...updatedBox.scanning1,
-        operator: currentUserFromUsers.id,
-        inProgress: false,
-      };
-    }
-  
-    // Обновляем текущий ID коробки и процесса в userRedux
+const handleProcessAction = (processType: keyof BoxData) => {
+  if (!selectedBox || !currentUserFromUsers) return;
+
+  console.log(`Starting process for ${processType} of box with barcode: ${selectedBox.barcode}`);
+
+  const timestamp = timeToString(new Date());
+
+  // Получаем текущую активную задачу
+  const activeTask = tasks.find(task => task.boxId === selectedBox.id && task.endTime === null);
+
+  // Если есть активная задача, завершаем ее
+  if (activeTask) {
     dispatch({
-      type: 'user/updateCurrentBoxProcess',
-      payload: processType,
+      type: 'tasks/endTask',
+      payload: {
+        ...activeTask,
+        endTime: timestamp,
+      },
     });
-  
-    // Обновляем коробку в store
-    dispatch(updateBox(updatedBox));
-    setSelectedBox(updatedBox); // Обновляем локальный стейт с обновленными данными
-  
-    // Создаем новую задачу и добавляем ее в tasksRedux
-    dispatch(startTask({
-      taskType: processType,
-      activity: processType,
-      boxId: selectedBox.id,
-      userId: currentUserFromUsers.id,
-      startTime: timestamp,
-      endTime: null,
-      isPaused: false,
-    }));
-  };
+    console.log(`Task for process ${activeTask.activity} ended. Task ID: ${activeTask.id}, Box ID: ${activeTask.boxId}`);
+  }
+
+  const taskActivity = getTaskActivity(processType);
+
+  dispatch(startTask({
+    taskType: "Box Activity",
+    activity: taskActivity,
+    boxId: selectedBox.id,
+    userId: currentUserFromUsers.id,
+    startTime: timestamp,
+    endTime: null,
+    isPaused: false,
+  }));
+
+  console.log(`Task for process ${processType} started. User ID: ${currentUserFromUsers.id}, Box ID: ${selectedBox.id}`);
+};
+
 
   return (
     <div className={styles.boxActivity}>
@@ -197,36 +169,31 @@ const BoxActivity = () => {
           <BoxStage
             process={selectedBox.inspection}
             processType="inspection"
-            handleProcessAction={() => handleProcessAction('inspection')}
-            unavailable={!isBoxActivityAvailable}
+            onProcessAction={() => handleProcessAction('inspection')}
             selectedBox={selectedBox}
           />
           <BoxStage
             process={selectedBox.preparation}
             processType="preparation"
-            handleProcessAction={() => handleProcessAction('preparation')}
-            unavailable={!isBoxActivityAvailable}
+            onProcessAction={() => handleProcessAction('preparation')}
             selectedBox={selectedBox}
           />
           <BoxStage
             process={selectedBox.scanning1}
             processType="scanning1"
-            handleProcessAction={() => handleProcessAction('scanning1')}
-            unavailable={!isBoxActivityAvailable}
+            onProcessAction={() => handleProcessAction('scanning1')}
             selectedBox={selectedBox}
           />
           <BoxStage
             process={selectedBox.scanning2}
             processType="scanning2"
-            handleProcessAction={() => handleProcessAction('scanning2')}
-            unavailable={!isBoxActivityAvailable}
+            onProcessAction={() => handleProcessAction('scanning2')}
             selectedBox={selectedBox}
           />
           <BoxStage
             process={selectedBox.review}
             processType="review"
-            handleProcessAction={() => handleProcessAction('review')}
-            unavailable={!isBoxActivityAvailable}
+            onProcessAction={() => handleProcessAction('review')}
             selectedBox={selectedBox}
           />
         </div>

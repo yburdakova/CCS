@@ -10,7 +10,7 @@ export interface UserData {
   isWorkEvent: boolean;
 }
 
-export interface periodOfTime {
+export interface PeriodOfTime {
     id: number;
     startTime: string | null;
     endTime:  string | null;
@@ -21,7 +21,7 @@ export interface BoxTaskTypes {
   inProgress: boolean;
   isFinished: boolean;
   isPaused: boolean;
-  periodsOfTime: periodOfTime[] | [];
+  periodsOfTime: PeriodOfTime[] | [];
   totalDurationMin: number;
 }
 

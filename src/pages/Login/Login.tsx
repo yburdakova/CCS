@@ -45,7 +45,7 @@ const Login = () => {
         </h1>
         <h3>Project Management Application <br></br>for High-Volume Scanning Projects</h3>
         <div className={styles.loginBox}>
-          
+
           <div className={styles.p}>Enter your registration data</div>
           <form onSubmit={handleSubmit}>
             <CustomInput type="text" label="Username" placeholder="Username" required getValue={setUsername}/>
