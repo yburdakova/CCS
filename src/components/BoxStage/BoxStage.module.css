@@ -13,6 +13,11 @@
   color: white;
 }
 
+.inPauseBtn {
+  background-color: #b963f3;
+  color: white;
+}
+
 .completedBtn {
   background-color: #32cd32; /* Зеленый цвет для завершенного состояния */
   color: white;

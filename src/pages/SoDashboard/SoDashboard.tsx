@@ -23,6 +23,7 @@ const SoDashboard = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const startWorkFunction = () => {
+    console.log("Work is started");
     const timestamp = timeToString(new Date());
     
     if (user) {
@@ -40,11 +41,11 @@ const SoDashboard = () => {
   const endWorkFunction = () => {
     console.log("Work is finished")
     const timestamp = timeToString(new Date());
-
+  
     if (user) {
       dispatch(endWork(user.id));
       dispatch(setAtWork(false)); // Обновление состояния в user
-
+  
       // Завершение активной задачи
       const activeTask = tasks.find(task => task.userId === user.id && task.endTime === null);
       if (activeTask) {
@@ -55,29 +56,40 @@ const SoDashboard = () => {
           taskId: activeTask.id,
           timestamp: timestamp,
         }));
+        console.log("Task ended and event logged");
       }
-
+  
       // Обновление процесса коробки
       if (currentBoxId) {
         const currentBox = boxes.find(box => box.id === currentBoxId);
         const currentProcessType = currentBox ? currentBoxProcess : null;
-
+  
         if (currentBox && currentProcessType) {
-          const currentProcess = currentBox[currentProcessType];
-
+          const currentProcess = { ...currentBox[currentProcessType] };  // Создаем новый объект процесса
+  
           // Обновление времени окончания последнего периода и установка isPaused в true
           if (currentProcess && currentProcess.inProgress) {
-            currentProcess.periodsOfTime[currentProcess.periodsOfTime.length - 1].endTime = timestamp;
-            currentProcess.isPaused = true;
-
+            const updatedPeriodsOfTime = currentProcess.periodsOfTime.map((period, index) => 
+              index === currentProcess.periodsOfTime.length - 1
+                ? { ...period, endTime: timestamp }
+                : period
+            );
+  
+            const updatedProcess = {
+              ...currentProcess,
+              periodsOfTime: updatedPeriodsOfTime,
+              isPaused: true,
+              inProgress: false,
+            };
+  
             // Обновление состояния коробки
             const updatedBox = {
               ...currentBox,
-              [currentProcessType]: currentProcess,
+              [currentProcessType]: updatedProcess,
             };
-
+  
             dispatch(updateBox(updatedBox));
-
+  
             // Выводим обновленные данные в консоль
             console.log("Updated Box Data after endWork:", updatedBox); 
           } else {
@@ -89,16 +101,18 @@ const SoDashboard = () => {
       } else {
         console.warn("No current box ID found.");
       }
-
+  
       dispatch(addEventLog({
         userId: user.id,
         eventType: "Work End",
         taskId: null,
         timestamp: timestamp,
       }));
+      console.log("Work end event logged");
     }
   };
-
+  
+  
   const handleWorkToggle = () => {
     if (isActiveUser) {
       endWorkFunction();

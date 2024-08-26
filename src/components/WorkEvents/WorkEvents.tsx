@@ -12,8 +12,8 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks);
   const dispatch = useDispatch<AppDispatch>();
   const isUserAtWork = useSelector((state: RootState) => state.user.atWork);
-  const currentBoxId = useSelector((state: RootState) => state.user.currentBox);
-  const currentBoxProcess = useSelector((state: RootState) => state.user.currentBoxProcess);
+  // const currentBoxId = useSelector((state: RootState) => state.user.currentBox);
+  // const currentBoxProcess = useSelector((state: RootState) => state.user.currentBoxProcess);
 
   const activeManagementTask = tasks.find(
     (task) => task.userId === userId && task.taskType === "Management Activity" && task.endTime === null
