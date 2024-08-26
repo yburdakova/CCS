@@ -12,6 +12,8 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks);
   const dispatch = useDispatch<AppDispatch>();
   const isUserAtWork = useSelector((state: RootState) => state.user.atWork);
+  const currentBoxId = useSelector((state: RootState) => state.user.currentBox);
+  const currentBoxProcess = useSelector((state: RootState) => state.user.currentBoxProcess);
 
   const activeManagementTask = tasks.find(
     (task) => task.userId === userId && task.taskType === "Management Activity" && task.endTime === null
@@ -25,6 +27,18 @@ const WorkEvents = ({ userId }: WorkEventsProps) => {
 
   const handleManagementTask = (activity: ActivityType) => {
     const timestamp = timeToString(new Date());
+
+    // Завершение текущей задачи по процессу коробки
+    const activeTask = tasks.find(task => task.userId === userId && task.endTime === null);
+    if (activeTask) {
+      dispatch(endTask(activeTask.id));
+      dispatch(addEventLog({
+        userId: userId,
+        eventType: "Task End",
+        taskId: activeTask.id,
+        timestamp: timestamp,
+      }));
+    }
 
     if (activeManagementTask) {
       // Завершение текущего Management Activity
